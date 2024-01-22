@@ -15,4 +15,7 @@ export type FileSystem = {
     isDirectory: boolean;
     size: number | undefined;
   }>;
+  /** file://<document directory path>/ */
+  documentDirectory: string;
+  writeAsStringAsync: (filepath: string, contents: string) => Promise<void>;
 };

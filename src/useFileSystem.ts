@@ -77,6 +77,10 @@ export function useFileSystem(): FileSystem {
       size: fileSize,
     };
   }, []);
+
+  const documentDirectory = `file://${RNFS.DocumentDirectoryPath}/`;
+  const writeAsStringAsync = RNFS.writeFile;
+
   return {
     file,
     progress,
@@ -86,5 +90,7 @@ export function useFileSystem(): FileSystem {
     success,
     downloadFile,
     getFileInfo,
+    documentDirectory,
+    writeAsStringAsync,
   };
 }
